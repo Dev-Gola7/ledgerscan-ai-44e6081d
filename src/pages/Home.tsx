@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { 
   Camera, 
   FileText, 
-  BarChart3, 
-  Shield, 
   Smartphone, 
   Zap,
   CheckCircle2,
@@ -13,11 +11,11 @@ import {
   Calculator,
   FileSpreadsheet,
   TrendingUp,
-  CreditCard,
-  Users,
   IndianRupee,
-  Building2
 } from 'lucide-react';
+import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
+import Testimonials from '@/components/Testimonials';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const trustPoints = [
@@ -56,15 +54,20 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-slide-up">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 AI That Turns Bills Into Clean Accounting —{' '}
                 <span className="text-accent">Automatically</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-slide-up animation-delay-100">
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                 LedgerScan Pro scans any bill (photo, PDF, WhatsApp invoice) and converts it into proper accounting entries, GST records, and reports — just like Tally, but automated.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up animation-delay-200">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/contact">
                   <Button variant="hero" size="xl">
                     Start Free Trial
@@ -77,10 +80,15 @@ const Home = () => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Hero Visual */}
-            <div className="relative animate-slide-in-right animation-delay-200">
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
               <div className="relative bg-card rounded-2xl shadow-elevated p-6 border border-border">
                 {/* Mock Product Interface */}
                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
@@ -128,10 +136,15 @@ const Home = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground rounded-xl px-4 py-2 shadow-glow animate-float">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="absolute -top-4 -right-4 bg-accent text-accent-foreground rounded-xl px-4 py-2 shadow-glow"
+              >
                 <span className="text-sm font-semibold">✓ GST Auto-Calculated</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -153,44 +166,42 @@ const Home = () => {
       {/* Problem Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Bills Are Everywhere. Accounting Is Still Manual.
             </h2>
             <p className="text-lg text-muted-foreground">
               Every business deals with the same chaos — scattered invoices, manual data entry, GST errors, and stress during filing season.
             </p>
-          </div>
+          </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {painPoints.map((point, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-xl p-6 border border-border card-hover animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center mb-4">
-                  <point.icon className="w-6 h-6 text-destructive" />
+              <StaggerItem key={index}>
+                <div className="bg-card rounded-xl p-6 border border-border card-hover h-full">
+                  <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center mb-4">
+                    <point.icon className="w-6 h-6 text-destructive" />
+                  </div>
+                  <h3 className="font-semibold mb-2">{point.title}</h3>
+                  <p className="text-sm text-muted-foreground">{point.desc}</p>
                 </div>
-                <h3 className="font-semibold mb-2">{point.title}</h3>
-                <p className="text-sm text-muted-foreground">{point.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Solution Section */}
       <section className="section-padding bg-secondary">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               One Scan. <span className="text-accent">Complete Accounting.</span>
             </h2>
             <p className="text-lg text-muted-foreground">
               This is not just bill storage. This is real accounting automation.
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
@@ -198,7 +209,7 @@ const Home = () => {
               { step: '02', title: 'AI Understands', desc: 'Extracts all invoice data accurately', icon: Zap },
               { step: '03', title: 'Entry Created', desc: 'Accounting voucher ready automatically', icon: FileSpreadsheet },
             ].map((item, index) => (
-              <div key={index} className="text-center animate-scale-in" style={{ animationDelay: `${index * 150}ms` }}>
+              <AnimatedSection key={index} delay={index * 0.15} className="text-center">
                 <div className="relative inline-block mb-6">
                   <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center shadow-glow">
                     <item.icon className="w-10 h-10 text-accent-foreground" />
@@ -209,7 +220,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -218,37 +229,39 @@ const Home = () => {
       {/* Features Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Everything You Need for Modern Accounting
             </h2>
             <p className="text-lg text-muted-foreground">
               Powerful features built with real Tally logic and GST compliance in mind.
             </p>
-          </div>
+          </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-xl p-6 border border-border card-hover group"
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:shadow-glow transition-all duration-300">
-                  <feature.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
+              <StaggerItem key={index}>
+                <div className="bg-card rounded-xl p-6 border border-border card-hover group h-full">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:shadow-glow transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
+                  </div>
+                  <h3 className="font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
                 </div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Dashboard Preview */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Your Business at a Glance
               </h2>
@@ -257,7 +270,14 @@ const Home = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {dashboardMetrics.map((metric, index) => (
-                  <div key={index} className="bg-primary-foreground/10 rounded-xl p-4">
+                  <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-primary-foreground/10 rounded-xl p-4"
+                  >
                     <p className="text-sm text-primary-foreground/60 mb-1">{metric.label}</p>
                     <div className="flex items-baseline gap-2">
                       <span className={`text-2xl font-bold ${metric.color}`}>{metric.value}</span>
@@ -265,37 +285,42 @@ const Home = () => {
                         <span className="text-sm text-accent">{metric.trend}</span>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </AnimatedSection>
 
-            <div className="bg-primary-foreground/5 rounded-2xl p-6 border border-primary-foreground/10">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="font-semibold">Monthly Overview</h3>
-                <span className="text-sm text-primary-foreground/60">December 2024</span>
-              </div>
-              <div className="space-y-4">
-                {[
-                  { label: 'Sales', value: 80, color: 'bg-accent' },
-                  { label: 'Expenses', value: 45, color: 'bg-primary-foreground/30' },
-                  { label: 'Profit', value: 65, color: 'bg-accent/70' },
-                ].map((bar, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span>{bar.label}</span>
-                      <span>{bar.value}%</span>
+            <AnimatedSection delay={0.2}>
+              <div className="bg-primary-foreground/5 rounded-2xl p-6 border border-primary-foreground/10">
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="font-semibold">Monthly Overview</h3>
+                  <span className="text-sm text-primary-foreground/60">December 2024</span>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Sales', value: 80, color: 'bg-accent' },
+                    { label: 'Expenses', value: 45, color: 'bg-primary-foreground/30' },
+                    { label: 'Profit', value: 65, color: 'bg-accent/70' },
+                  ].map((bar, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span>{bar.label}</span>
+                        <span>{bar.value}%</span>
+                      </div>
+                      <div className="h-3 bg-primary-foreground/10 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${bar.value}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: index * 0.2 }}
+                          className={`h-full ${bar.color} rounded-full`}
+                        />
+                      </div>
                     </div>
-                    <div className="h-3 bg-primary-foreground/10 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full ${bar.color} rounded-full transition-all duration-1000`}
-                        style={{ width: `${bar.value}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -303,25 +328,27 @@ const Home = () => {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-b from-secondary to-background">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Stop Manual Accounting. <span className="text-accent">Start Automating.</span>
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join hundreds of businesses that have simplified their accounting with LedgerScan Pro. No credit card required to start.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button variant="hero" size="xl">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="hero-outline" size="xl">
-                Request Demo
-              </Button>
-            </Link>
-          </div>
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Stop Manual Accounting. <span className="text-accent">Start Automating.</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join hundreds of businesses that have simplified their accounting with LedgerScan Pro. No credit card required to start.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button variant="hero" size="xl">
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="hero-outline" size="xl">
+                  Request Demo
+                </Button>
+              </Link>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </div>
