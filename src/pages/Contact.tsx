@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import {
   Mail,
   Phone,
@@ -35,22 +37,91 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          business_name: formData.businessName || null,
+          email: formData.email,
+          phone: formData.phone || null,
+          message: formData.message,
+          submission_type: 'contact',
+        });
 
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: '',
-      businessName: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      setFormData({
+        name: '',
+        businessName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleDemoRequest = async () => {
+    if (!formData.name || !formData.email) {
+      toast({
+        title: "Please fill in your details",
+        description: "Name and email are required to book a demo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          business_name: formData.businessName || null,
+          email: formData.email,
+          phone: formData.phone || null,
+          message: 'Demo request',
+          submission_type: 'demo',
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Demo requested!",
+        description: "We'll reach out to schedule your personalized demo.",
+      });
+
+      setFormData({
+        name: '',
+        businessName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
@@ -65,12 +136,22 @@ const Contact = () => {
       {/* Hero */}
       <section className="section-padding bg-gradient-to-b from-secondary to-background">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             Get in <span className="text-accent">Touch</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up animation-delay-100">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
+          >
             Ready to automate your accounting? Book a demo or send us a message. Our team will get back to you within 24 hours.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -79,7 +160,13 @@ const Contact = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Form */}
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-lifted">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-card rounded-2xl p-8 border border-border shadow-lifted"
+            >
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -156,10 +243,16 @@ const Contact = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Info */}
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
               {/* Demo Benefits */}
               <div className="bg-secondary rounded-2xl p-8">
                 <h3 className="text-xl font-bold mb-4">Book a Demo</h3>
@@ -174,7 +267,13 @@ const Contact = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="accent" size="lg" className="w-full">
+                <Button 
+                  variant="accent" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={handleDemoRequest}
+                  disabled={isSubmitting}
+                >
                   Schedule Demo Call
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -233,7 +332,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
