@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { FileText, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import logo from '@/assets/ledgerscan-logo.png';
 
 const Footer = () => {
   const footerLinks = {
@@ -37,11 +38,9 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
-                <FileText className="w-5 h-5 text-accent-foreground" />
-              </div>
+              <img src={logo} alt="LedgerScan Pro" className="w-10 h-10 object-contain" />
               <span className="text-xl font-bold">
-                LedgerScan<span className="text-accent">Pro</span>
+                Ledger<span className="text-accent">Scan</span> Pro
               </span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">

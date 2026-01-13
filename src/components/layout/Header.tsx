@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, FileText, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/ledgerscan-logo.png';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -31,11 +32,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-glow transition-shadow duration-300">
-              <FileText className="w-5 h-5 text-accent-foreground" />
-            </div>
+            <img src={logo} alt="LedgerScan Pro" className="w-10 h-10 object-contain" />
             <span className="text-xl font-bold text-foreground">
-              LedgerScan<span className="text-accent">Pro</span>
+              Ledger<span className="text-accent">Scan</span> Pro
             </span>
           </Link>
 
