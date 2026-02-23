@@ -106,11 +106,11 @@ const Header = () => {
                     Book Demo
                   </Button>
                 </Link>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="accent" className="w-full">
-                    Start Free Trial
+                    Use Our Application
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
