@@ -61,11 +61,11 @@ const Header = () => {
                 Book Demo
               </Button>
             </Link>
-            <Link to="/contact">
+            <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer">
               <Button variant="accent" size="sm">
-                Start Free Trial
+                Use Our Application
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}

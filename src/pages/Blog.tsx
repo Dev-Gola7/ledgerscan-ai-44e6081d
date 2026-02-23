@@ -1,69 +1,17 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
-
-// Static blog posts for SEO
-const blogPosts = [
-  {
-    slug: 'understanding-gst-input-credit',
-    title: 'Understanding GST Input Credit: A Complete Guide for Businesses',
-    excerpt: 'Learn how to maximize your GST input credit claims and avoid common mistakes that lead to rejected credits during GST filing.',
-    category: 'GST Compliance',
-    author: 'LedgerScan Pro Team',
-    date: '2024-12-15',
-    readTime: '8 min read',
-  },
-  {
-    slug: 'automate-bill-processing',
-    title: 'How AI Bill Scanning Can Save Your Business 20 Hours Per Month',
-    excerpt: 'Discover how automated bill processing eliminates manual data entry and reduces errors in your accounting workflow.',
-    category: 'Product Updates',
-    author: 'LedgerScan Pro Team',
-    date: '2024-12-10',
-    readTime: '5 min read',
-  },
-  {
-    slug: 'gstr-1-filing-guide',
-    title: 'Step-by-Step GSTR-1 Filing Guide for Small Businesses',
-    excerpt: 'Everything you need to know about filing GSTR-1, including deadlines, formats, and common errors to avoid.',
-    category: 'GST Compliance',
-    author: 'LedgerScan Pro Team',
-    date: '2024-12-05',
-    readTime: '10 min read',
-  },
-  {
-    slug: 'double-entry-bookkeeping-basics',
-    title: 'Double-Entry Bookkeeping: Why It Matters for Your Business',
-    excerpt: 'Understand the fundamentals of double-entry accounting and how it keeps your books accurate and audit-ready.',
-    category: 'Accounting Tips',
-    author: 'LedgerScan Pro Team',
-    date: '2024-11-28',
-    readTime: '7 min read',
-  },
-  {
-    slug: 'whatsapp-invoice-management',
-    title: 'Managing WhatsApp Invoices: From Chaos to Organized',
-    excerpt: 'Tips and tools for capturing, organizing, and processing invoices received via WhatsApp for your business.',
-    category: 'Productivity',
-    author: 'LedgerScan Pro Team',
-    date: '2024-11-20',
-    readTime: '6 min read',
-  },
-  {
-    slug: 'year-end-accounting-checklist',
-    title: 'Year-End Accounting Checklist for Indian Businesses',
-    excerpt: 'A comprehensive checklist to ensure your books are ready for the financial year-end and tax filing season.',
-    category: 'Accounting Tips',
-    author: 'LedgerScan Pro Team',
-    date: '2024-11-15',
-    readTime: '12 min read',
-  },
-];
-
-const categories = ['All', 'GST Compliance', 'Accounting Tips', 'Product Updates', 'Productivity'];
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { blogPosts, blogCategories } from '@/data/blogPosts';
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const filteredPosts = activeCategory === 'All'
+    ? blogPosts
+    : blogPosts.filter(p => p.category === activeCategory);
+
   return (
     <div className="overflow-hidden">
       {/* Hero */}
@@ -92,11 +40,12 @@ const Blog = () => {
       <section className="py-8 bg-background border-b border-border">
         <div className="container-custom">
           <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category, index) => (
+            {blogCategories.map((category) => (
               <Button
-                key={index}
-                variant={index === 0 ? 'accent' : 'outline'}
+                key={category}
+                variant={activeCategory === category ? 'accent' : 'outline'}
                 size="sm"
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </Button>
@@ -109,7 +58,7 @@ const Blog = () => {
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
               <motion.article
                 key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
@@ -118,10 +67,14 @@ const Blog = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-2xl border border-border overflow-hidden group hover:shadow-lg transition-shadow duration-300"
               >
-                {/* Placeholder image */}
-                <div className="aspect-video bg-secondary flex items-center justify-center">
-                  <span className="text-4xl font-bold text-accent/20">{post.category.charAt(0)}</span>
-                </div>
+                <Link to={`/blog/${post.slug}`}>
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="aspect-video object-cover w-full group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </Link>
 
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
@@ -134,9 +87,11 @@ const Blog = () => {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors line-clamp-2">
-                    {post.title}
-                  </h2>
+                  <Link to={`/blog/${post.slug}`}>
+                    <h2 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                      {post.title}
+                    </h2>
+                  </Link>
 
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                     {post.excerpt}
@@ -151,10 +106,12 @@ const Blog = () => {
                         year: 'numeric',
                       })}
                     </div>
-                    <Button variant="ghost" size="sm" className="text-accent">
-                      Read More
-                      <ArrowRight className="w-3 h-3" />
-                    </Button>
+                    <Link to={`/blog/${post.slug}`}>
+                      <Button variant="ghost" size="sm" className="text-accent">
+                        Read More
+                        <ArrowRight className="w-3 h-3" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </motion.article>

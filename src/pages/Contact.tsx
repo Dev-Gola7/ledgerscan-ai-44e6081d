@@ -112,6 +112,18 @@ const Contact = () => {
 
       if (error) throw error;
 
+      // Trigger email notification (fire-and-forget)
+      supabase.functions.invoke('send-contact-notification', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          businessName: formData.businessName || undefined,
+          message: 'Demo request',
+          submissionType: 'demo',
+        },
+      }).catch(console.error);
+
       toast({
         title: "Demo requested!",
         description: "We'll reach out to schedule your personalized demo.",
