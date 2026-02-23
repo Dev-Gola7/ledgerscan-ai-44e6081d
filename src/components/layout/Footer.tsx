@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
 import logo from '@/assets/ledgerscan-logo.png';
 
 const Footer = () => {
@@ -150,13 +150,22 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://www.linkedin.com/in/devdatta-gola-b9a9621a0"
+                href="https://www.linkedin.com/company/ledger-scan-pro/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/ledgerscan_pro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://wa.me/918920025752"

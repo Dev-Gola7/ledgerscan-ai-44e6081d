@@ -13,6 +13,8 @@ import Security from "./pages/Security";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import GSTReturns from "./pages/GSTReturns";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/gst-returns" element={<GSTReturns />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

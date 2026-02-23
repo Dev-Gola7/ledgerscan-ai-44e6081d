@@ -20,6 +20,7 @@ const Header = () => {
     { name: 'Product', href: '/product' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'Solutions', href: '/solutions' },
+    { name: 'GST Returns', href: '/gst-returns' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
   ];
@@ -60,11 +61,11 @@ const Header = () => {
                 Book Demo
               </Button>
             </Link>
-            <Link to="/contact">
+            <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer">
               <Button variant="accent" size="sm">
-                Start Free Trial
+                Use Our Application
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -105,11 +106,11 @@ const Header = () => {
                     Book Demo
                   </Button>
                 </Link>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="accent" className="w-full">
-                    Start Free Trial
+                    Use Our Application
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

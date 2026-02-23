@@ -257,6 +257,64 @@ const Home = () => {
       {/* Testimonials Section */}
       <Testimonials />
 
+      {/* GST Returns Highlight */}
+      <section className="section-padding bg-gradient-to-r from-accent/10 to-secondary">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection>
+              <span className="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-medium mb-4 inline-block">
+                New Feature
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                File GST Returns with <span className="text-accent">Zero Stress</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                LedgerScan Pro automatically prepares your GSTR-1 and GSTR-3B from scanned bills. No more last-minute rushes or manual data entry during filing season.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {['Auto CGST/SGST/IGST calculation', 'Input credit reconciliation', 'GSTR-1 & GSTR-3B ready data', 'Interactive filing checklist'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/gst-returns">
+                <Button variant="accent" size="lg">
+                  Explore GST Filing
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="bg-card rounded-2xl p-8 border border-border shadow-lifted">
+                <div className="flex items-center gap-2 mb-6">
+                  <Calculator className="w-6 h-6 text-accent" />
+                  <h3 className="font-semibold text-lg">GST Summary</h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Output CGST', value: '₹24,030' },
+                    { label: 'Output SGST', value: '₹24,030' },
+                    { label: 'Input CGST', value: '₹16,650' },
+                    { label: 'Input SGST', value: '₹16,650' },
+                  ].map((row, i) => (
+                    <div key={i} className="flex justify-between items-center p-3 bg-secondary rounded-lg">
+                      <span className="text-muted-foreground text-sm">{row.label}</span>
+                      <span className="font-semibold">{row.value}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between items-center p-3 bg-accent/10 rounded-lg border border-accent/20">
+                    <span className="font-semibold text-accent">Net Payable</span>
+                    <span className="font-bold text-accent text-lg">₹14,760</span>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Dashboard Preview */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom">

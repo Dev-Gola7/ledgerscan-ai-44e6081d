@@ -51,6 +51,18 @@ const Contact = () => {
 
       if (error) throw error;
 
+      // Trigger email notification (fire-and-forget)
+      supabase.functions.invoke('send-contact-notification', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          businessName: formData.businessName || undefined,
+          message: formData.message,
+          submissionType: 'contact',
+        },
+      }).catch(console.error);
+
       toast({
         title: "Message sent!",
         description: "We'll get back to you within 24 hours.",
@@ -99,6 +111,18 @@ const Contact = () => {
         });
 
       if (error) throw error;
+
+      // Trigger email notification (fire-and-forget)
+      supabase.functions.invoke('send-contact-notification', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          businessName: formData.businessName || undefined,
+          message: 'Demo request',
+          submissionType: 'demo',
+        },
+      }).catch(console.error);
 
       toast({
         title: "Demo requested!",
