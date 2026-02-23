@@ -13,6 +13,8 @@ import Security from "./pages/Security";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import GSTReturns from "./pages/GSTReturns";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
