@@ -451,7 +451,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>LedgerScan Pro offers the perfect balance: professional-grade <strong>financial accounting software</strong> with AI automation, without the complexity and cost of traditional ERP.</p>
 
-<p><a href="/how-it-works">Learn how LedgerScan Pro works →</a> | <a href="/pricing">Compare pricing plans →</a> | <a href="/contact">Talk to our team →</a></p>
+<p><a href="/how-it-works">Learn how LedgerScan Pro works →</a> | <a href="/contact">Talk to our team →</a></p>
     `
   }
 ];
