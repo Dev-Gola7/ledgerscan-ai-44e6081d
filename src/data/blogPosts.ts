@@ -464,7 +464,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min read',
     coverImage: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80',
     keywords: ['accounting software', 'gst filing', 'automated accounting software', 'accounting systems', 'billing software', 'accounting and billing software', 'financial accounting software', 'online accounting software', 'accounting management system'],
-    content: \`
+    content: `
 <h2>Why Manual GST Filing Is Costing Your Business</h2>
 <p>Every month, thousands of Indian businesses spend hours manually preparing GST returns. From tallying invoices to cross-checking GSTIN numbers, manual <strong>GST filing</strong> is error-prone, stressful, and time-consuming. With the right <strong>automated accounting software</strong>, you can eliminate these headaches entirely.</p>
 
@@ -516,7 +516,7 @@ export const blogPosts: BlogPost[] = [
 <p>Whether you're using <strong>online accounting software</strong> for the first time or switching from another <strong>accounting and billing software</strong>, the transition is seamless. Your existing data can be imported, and the AI starts learning your business patterns from day one.</p>
 
 <p><a href="/gst-returns">Explore GST Filing features →</a> | <a href="/contact">Book a demo →</a></p>
-    \`
+    `
   },
   {
     slug: 'whatsapp-invoice-scanning-business-guide',
@@ -528,7 +528,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     coverImage: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80',
     keywords: ['invoice scanner', 'billing software', 'invoicing software', 'ledger app', 'automated accounting software', 'easy invoicing', 'invoice making software', 'business invoice software', 'simple billing software', 'easy billing software'],
-    content: \`
+    content: `
 <h2>Why WhatsApp Is India's Unofficial Business Invoice Channel</h2>
 <p>In India, WhatsApp isn't just a messaging app — it's a business tool. Suppliers send invoices as WhatsApp images, vendors share bills as PDF attachments, and retailers forward receipts through group chats. Yet most <strong>billing software</strong> completely ignores this reality.</p>
 
@@ -549,13 +549,13 @@ export const blogPosts: BlogPost[] = [
 <h2>Real-World Scenarios</h2>
 
 <h3>The Retail Shop Owner</h3>
-<p>Ramesh runs a hardware store. He receives 30+ supplier invoices weekly via WhatsApp. Previously, he'd stack printouts and spend Sunday evenings entering data. Now, he forwards each bill as it arrives — his <strong>automated accounting software</strong> handles the rest.</p>
+<p>A hardware store owner receives 30+ supplier invoices weekly via WhatsApp. Previously, printouts would stack up for weekend data entry. Now, each bill is forwarded as it arrives — the <strong>automated accounting software</strong> handles the rest.</p>
 
 <h3>The Freelance Consultant</h3>
-<p>Priya manages expenses across multiple clients. She photographs taxi receipts, forwards hotel bills from WhatsApp, and scans restaurant invoices. Her <strong>easy invoicing</strong> workflow means expense reports are always current.</p>
+<p>Managing expenses across multiple clients means photographing taxi receipts, forwarding hotel bills from WhatsApp, and scanning restaurant invoices. An <strong>easy invoicing</strong> workflow means expense reports are always current.</p>
 
 <h3>The CA Managing 50+ Clients</h3>
-<p>Vikram's clients send bills through WhatsApp daily. Instead of hiring data entry operators, he uses LedgerScan Pro's <strong>invoice scanner</strong> to process them instantly. Client accounts stay updated in real-time.</p>
+<p>When clients send bills through WhatsApp daily, instead of hiring data entry operators, the <strong>invoice scanner</strong> processes them instantly. Client accounts stay updated in real-time.</p>
 
 <h2>Beyond WhatsApp: Multi-Channel Invoice Capture</h2>
 <p>While WhatsApp scanning is transformative, <a href="/product">LedgerScan Pro</a> captures invoices from every channel:</p>
@@ -576,7 +576,7 @@ export const blogPosts: BlogPost[] = [
 <p>If your suppliers already send bills via WhatsApp, you're halfway there. Connect with LedgerScan Pro and turn those chat messages into proper accounting entries — automatically.</p>
 
 <p><a href="/contact">Get started with WhatsApp scanning →</a> | <a href="/how-it-works">See how it works →</a></p>
-    \`
+    `
   },
   {
     slug: 'small-business-accounting-mistakes-avoid',
@@ -588,9 +588,9 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 min read',
     coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
     keywords: ['accounting software', 'best accounting software for small business', 'simple accounting software', 'easy accounting', 'accounting application', 'bookkeeping software', 'financial accounting system', 'accounting management system', 'ledger software', 'accounting platforms'],
-    content: \`
+    content: `
 <h2>Why Accounting Mistakes Are So Expensive</h2>
-<p>Small businesses in India lose an estimated ₹2-5 lakhs annually due to accounting errors — from missed input tax credit to incorrect GST calculations. The right <strong>accounting software</strong> can prevent most of these mistakes, yet many businesses continue with error-prone manual processes.</p>
+<p>Small businesses in India lose an estimated 2-5 lakhs annually due to accounting errors — from missed input tax credit to incorrect GST calculations. The right <strong>accounting software</strong> can prevent most of these mistakes, yet many businesses continue with error-prone manual processes.</p>
 
 <p>Here are the seven most costly accounting mistakes we see, and how modern <strong>accounting platforms</strong> solve them.</p>
 
@@ -602,7 +602,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Mistake #2: Incorrect GST Classification</h2>
 <p>Applying IGST when SGST/CGST is required (or vice versa) creates reconciliation nightmares during filing. Manual classification is particularly error-prone when dealing with interstate vs. intrastate supplies.</p>
 
-<p><strong>The fix:</strong> <strong>Best accounting software for small business</strong> automatically determines the correct GST type based on supplier and buyer GSTIN locations.</p>
+<p><strong>The fix:</strong> The <strong>best accounting software for small business</strong> automatically determines the correct GST type based on supplier and buyer GSTIN locations.</p>
 
 <h2>Mistake #3: Missing Input Tax Credit</h2>
 <p>Every missed purchase invoice is lost input credit. Businesses that manually track invoices often fail to claim 10-15% of eligible credits — that's money left on the table.</p>
@@ -635,7 +635,7 @@ export const blogPosts: BlogPost[] = [
 <p>Don't wait for a GST notice or a failed audit to fix your accounting. Start with the right tools today.</p>
 
 <p><a href="/contact">Start your free trial →</a> | <a href="/solutions">See solutions for your business →</a></p>
-    \`
+    `
   },
   {
     slug: 'tally-alternative-modern-accounting-automation',
@@ -647,7 +647,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 min read',
     coverImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
     keywords: ['accounting software', 'ledger app', 'ledger software', 'busy accounting software', 'busy software', 'accounting application software', 'integrated accounting software', 'best accounting software', 'accounting systems', 'simple accounting', 'easy accounting software', 'online accounting software for small business'],
-    content: \`
+    content: `
 <h2>Why Businesses Are Moving Beyond Tally</h2>
 <p>Tally has been India's go-to <strong>accounting software</strong> for decades — and for good reason. Its double-entry bookkeeping, voucher system, and report generation set the standard. But in 2025, businesses need more than what traditional desktop <strong>accounting systems</strong> offer.</p>
 
@@ -697,7 +697,7 @@ export const blogPosts: BlogPost[] = [
 <p>The <strong>best accounting software</strong> is one that works the way you do — just faster, smarter, and with less manual effort.</p>
 
 <p><a href="/how-it-works">See how LedgerScan Pro works →</a> | <a href="/contact">Book a free demo →</a></p>
-    \`
+    `
   },
   {
     slug: 'accountant-ca-digital-practice-management',
@@ -709,7 +709,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min read',
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
     keywords: ['accounting software', 'accounting management system', 'ledger application', 'bookkeeping software', 'accounting platforms', 'business management software', 'accounting packages', 'financial software', 'accounting application', 'simple accounting software'],
-    content: \`
+    content: `
 <h2>The Modern CA's Challenge: Scale Without Sacrificing Quality</h2>
 <p>Chartered accountants and accounting professionals face a unique challenge: managing dozens of clients, each with different business types, invoice volumes, and compliance requirements. Traditional <strong>accounting software</strong> wasn't built for multi-client management at scale.</p>
 
@@ -768,7 +768,7 @@ export const blogPosts: BlogPost[] = [
 <p>Whether you're a solo CA or a firm with multiple partners, <a href="/solutions">LedgerScan Pro's solutions</a> for accounting professionals are designed to fit your practice. Start with a few clients and scale as you see results.</p>
 
 <p><a href="/contact">Book a demo for your practice →</a> | <a href="/how-it-works">See how it works →</a></p>
-    \`
+    `
   }
 ];
 
