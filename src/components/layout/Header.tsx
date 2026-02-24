@@ -106,7 +106,7 @@ const Header = () => {
                     Book Demo
                   </Button>
                 </Link>
-                <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                <a href="https://ledgerscanpro.in/welcome" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="accent" className="w-full">
                     Use Our Application
                   </Button>
