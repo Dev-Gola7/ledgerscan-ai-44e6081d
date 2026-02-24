@@ -239,11 +239,6 @@ const GSTReturns = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/pricing">
-                <Button variant="hero-outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                  View Pricing
-                </Button>
-              </Link>
             </div>
           </AnimatedSection>
         </div>
