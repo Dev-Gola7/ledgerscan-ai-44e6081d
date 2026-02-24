@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
 <li>Real-time dashboards — see your business health at a glance</li>
 </ul>
 
-<p>Ready to experience the <strong>latest accounting software</strong> technology? <a href="/contact">Start your free trial</a> or <a href="/pricing">check our pricing plans</a> to find the perfect fit for your business.</p>
+<p>Ready to experience the <strong>latest accounting software</strong> technology? <a href="/contact">Start your free trial</a> to find the perfect fit for your business.</p>
 
 <h2>Choosing the Right Accounting Management System</h2>
 <p>When evaluating <strong>accounting management system</strong> options, consider your business size, industry, and growth plans. A good <strong>accounting application</strong> should grow with you — from <strong>simple accounting software</strong> needs to complex multi-branch operations.</p>
