@@ -343,7 +343,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Want to see <strong>good invoicing software</strong> in action? <a href="/contact">Book a free demo</a> of LedgerScan Pro and experience the difference.</p>
 
-<p><a href="/pricing">View pricing →</a> | <a href="/solutions">See solutions for your industry →</a></p>
+<p><a href="/solutions">See solutions for your industry →</a></p>
     `
   },
   {
