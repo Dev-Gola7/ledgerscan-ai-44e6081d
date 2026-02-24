@@ -61,7 +61,7 @@ const Header = () => {
                 Book Demo
               </Button>
             </Link>
-            <a href="https://app.ledgerscanpro.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://ledgerscanpro.in/welcome" target="_blank" rel="noopener noreferrer">
               <Button variant="accent" size="sm">
                 Use Our Application
               </Button>
