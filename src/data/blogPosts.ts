@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
 <li>Real-time dashboards — see your business health at a glance</li>
 </ul>
 
-<p>Ready to experience the <strong>latest accounting software</strong> technology? <a href="/contact">Start your free trial</a> or <a href="/pricing">check our pricing plans</a> to find the perfect fit for your business.</p>
+<p>Ready to experience the <strong>latest accounting software</strong> technology? <a href="/contact">Start your free trial</a> to find the perfect fit for your business.</p>
 
 <h2>Choosing the Right Accounting Management System</h2>
 <p>When evaluating <strong>accounting management system</strong> options, consider your business size, industry, and growth plans. A good <strong>accounting application</strong> should grow with you — from <strong>simple accounting software</strong> needs to complex multi-branch operations.</p>
@@ -166,7 +166,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>For most Indian small businesses, an integrated <strong>invoicing and accounting software</strong> solution offers the best value. Why maintain two separate systems when one <strong>billing and invoicing software</strong> can handle everything?</p>
 
-<p><a href="/pricing">See LedgerScan Pro pricing →</a> | <a href="/contact">Book a demo →</a></p>
+<p><a href="/contact">Book a demo →</a></p>
     `
   },
   {
@@ -343,7 +343,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Want to see <strong>good invoicing software</strong> in action? <a href="/contact">Book a free demo</a> of LedgerScan Pro and experience the difference.</p>
 
-<p><a href="/pricing">View pricing →</a> | <a href="/solutions">See solutions for your industry →</a></p>
+<p><a href="/solutions">See solutions for your industry →</a></p>
     `
   },
   {
@@ -451,7 +451,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>LedgerScan Pro offers the perfect balance: professional-grade <strong>financial accounting software</strong> with AI automation, without the complexity and cost of traditional ERP.</p>
 
-<p><a href="/how-it-works">Learn how LedgerScan Pro works →</a> | <a href="/pricing">Compare pricing plans →</a> | <a href="/contact">Talk to our team →</a></p>
+<p><a href="/how-it-works">Learn how LedgerScan Pro works →</a> | <a href="/contact">Talk to our team →</a></p>
     `
   }
 ];

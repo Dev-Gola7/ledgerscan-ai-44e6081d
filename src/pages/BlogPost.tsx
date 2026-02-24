@@ -108,11 +108,6 @@ const BlogPost = () => {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
-            <Link to="/pricing">
-              <Button variant="ghost" size="lg" className="text-accent-foreground hover:bg-accent-foreground/10">
-                View Pricing
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
