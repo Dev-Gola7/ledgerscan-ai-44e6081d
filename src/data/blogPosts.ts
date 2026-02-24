@@ -166,7 +166,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>For most Indian small businesses, an integrated <strong>invoicing and accounting software</strong> solution offers the best value. Why maintain two separate systems when one <strong>billing and invoicing software</strong> can handle everything?</p>
 
-<p><a href="/pricing">See LedgerScan Pro pricing →</a> | <a href="/contact">Book a demo →</a></p>
+<p><a href="/contact">Book a demo →</a></p>
     `
   },
   {
