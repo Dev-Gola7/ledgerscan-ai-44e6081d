@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import HowItWorks from "./pages/HowItWorks";
 import Solutions from "./pages/Solutions";
-import Pricing from "./pages/Pricing";
+
 import Security from "./pages/Security";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
